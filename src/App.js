@@ -1,28 +1,19 @@
-import React  from 'react'
+
+import React from 'react'
+import UsersList from './components/UsersList'
 
 import {connect} from 'react-redux'
 
 const App = (props) => (
-
-    <div>{
-        props.usersData
-        &&
-        props.usersData.map(user => (
-            <div
-                key={user.email}
-            >
-                {user.name.first} {user.name.last}
-            </div>
-        ))
-    }
+    <div>
+        <UsersList usersData={props.usersData}/>
     </div>
-
 )
 
 const mapStateToProps = state => ({
     usersData: state.users.usersData
 })
 
-export default connect  (
+export default connect(
     mapStateToProps
 )(App)
