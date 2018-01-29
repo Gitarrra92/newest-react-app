@@ -4,9 +4,16 @@ import {connect} from 'react-redux'
 
 
 
-const App = () => (
+const App = (props) => (
 
-    <div>App</div>
+    <div>{
+        props.usersData
+        &&
+        props.usersData.map(user => (
+            <div>user</div>
+        ))
+
+    }</div>
 
 )
 
