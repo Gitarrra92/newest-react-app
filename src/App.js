@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
+import React  from 'react'
 
 import {connect} from 'react-redux'
-
-
 
 const App = (props) => (
 
@@ -12,20 +10,15 @@ const App = (props) => (
         props.usersData.map(user => (
             <div>user</div>
         ))
-
-    }</div>
+    }
+    </div>
 
 )
 
 const mapStateToProps = state => ({
-
     usersData: state.users.usersData
 })
 
-
-
-
 export default connect  (
     mapStateToProps
-
 )(App)
