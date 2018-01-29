@@ -6,8 +6,8 @@ const setUsersData = data => ({
 })
 
 
-export const fetchUsersData = () => (dispatch, getState) => {
-    fetch('https://randomuser.me/api/?results=10')
+export const fetchUsersData = (numberOfUsers) => (dispatch, getState) => {
+    fetch('https://randomuser.me/api/?nat=gb&results=' + numberOfUsers)
         .then(response => response.json())
         .then(data => dispatch(setUsersData(data.results)))
 }
